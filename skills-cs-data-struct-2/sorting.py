@@ -6,7 +6,17 @@ def bubble_sort(lst):
         >>> bubble_sort([3, 5, 7, 2, 4, 1])
         [1, 2, 3, 4, 5, 7]
     """
-    pass
+
+    # num_of_passes is the total items in the list
+    # for bubble sort we need to keep iterating until the end of the list
+    # as our passes (excluding the last item). Then within those num_of_passes,
+    # we have to loop again, the length of the num_of_passes.
+    for num_of_passes in range(len(lst)-1, 0, -1):
+        for i in range(num_of_passes):
+            if lst[i] > lst[i+1]:
+                temp = lst[i]
+                lst[i] = lst[i+1]
+                lst[i+1] = temp
 
 
 def merge_lists(list1, list2):
@@ -15,8 +25,20 @@ def merge_lists(list1, list2):
     >>> merge_lists([1, 3, 9], [4, 7, 11])
     [1, 3, 4, 7, 9, 11]
     """
-
-    pass
+    list_c = []
+    # first check the 0th element of list1, list2
+    # compare their values
+    # put them in list c
+    while len(list1) > 0 or len(list2) > 0:
+        if list1 == []:
+            list_c.append(list2.pop(0))
+        elif list2 == []:
+            list_c.append(list1.pop(0))
+        elif list1[0] < list2[0]:
+            list_c.append(list1.pop(0))
+        else:
+            list_c.append(list2.pop(0))
+    print list_c
 
 
 ##########ADVANCED##########
