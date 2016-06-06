@@ -53,9 +53,34 @@ def merge_sort(lst):
     >>> merge_sort([6, 2, 3, 9, 0, 1])
     [0, 1, 2, 3, 6, 9]
     """
-    pass
 
+    if len(list1) == 1:
+        return list1
+    if len(list2) == 1:
+        return list2
+    list_div_value = len(lst)/2
+    list1 = lst[:list_div_value]
+    list2 = lst[list_div_value:]
 
+    halved_list = merge_lists(list1, list2)
+
+    # idea: the recursive step is actually the divide the list into smaller
+    # segments step. We will continue to divide the list until one of the lists
+    # have only one element in it.
+
+# Yeah, I don't know the solution, but here is a close enough version:
+# def divide_stuff(listy):
+#     new_list = []
+#     divided_val = len(listy)/2
+#     bloop = listy[divided_val:]
+
+#     if len(listy) == 1:
+#         return listy
+#     else:
+#         blah = divide_stuff(listy[:divided_val])
+#     sorted_list = merge_lists(blah, bloop)
+#     return sorted_list
+# divide_stuff([6, 2, 3, 9, 0, 1])
 
 
 #####################################################################
