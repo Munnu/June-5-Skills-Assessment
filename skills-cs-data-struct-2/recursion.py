@@ -86,7 +86,10 @@ def num_nodes(tree):
         3
     """
 
-    pass
+    if len(tree.children) == 0:
+        return 0
+    else:
+        return 1 + print_all_tree_data(tree.children.pop(0))
 
 #####################################################################
 # END OF ASSIGNMENT: You can ignore everything below.
